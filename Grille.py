@@ -11,10 +11,10 @@ class Grille:
         self.grille = numpy.zeros(hauteur, longueur)
         
     def coup(joueur, colonne):
-        if (colonne > self.longueur-1) && (colonne <0):
+        if (colonne > self.longueur-1) and (colonne <0):
             return 1
-        for i in range(hauteur, -1, -1
-            if self.grille[i][colonne] = 0:
+        for i in range(hauteur, -1, -1):
+            if self.grille[i][colonne] == 0 :
                 self.grille[i][colonne] = joueur
                 self.derniercoup = [i, colonne]
                 return 0
@@ -34,7 +34,7 @@ class Grille:
         #test ligne horizontale
         
         #recherche début de ligne
-        while(self.grille[y][i] == joueur) && (i >=0):
+        while(self.grille[y][i] == joueur) and (i >=0):
             i-=1
         i+=1
 
@@ -42,7 +42,7 @@ class Grille:
         ligne = False
         if i+4 > self.largeur:
             ligne = False
-        elif:
+        else:
             #test 4 jetons alignés
             ligne = True
             for a in range(0,4):
@@ -56,14 +56,14 @@ class Grille:
         i=y
         
         #recherche début de ligne
-        while(self.grille[i][x] == joueur) && (i >=0):
+        while(self.grille[i][x] == joueur) and (i >=0):
             i-=1
         i+=1
         #test distance à la fin de la grille
         ligne = False
         if i+4 > self.hauteur:
             ligne = False
-        elif:
+        else:
             #test 4 jetons alignés
             ligne = True
             for a in range(0,4):
@@ -77,7 +77,7 @@ class Grille:
         j = x
         
         #recherche début de ligne
-        while(self.grille[i][j] == joueur) && (i >=0) && (j >=0):
+        while(self.grille[i][j] == joueur) and (i >=0) and (j >=0):
             i-=1
             j-=1
 
@@ -86,9 +86,9 @@ class Grille:
 
         #test distance à la fin de la grille
         ligne = False
-        if (i+4 > self.hauteur) || (j+4> self.largeur):
+        if (i+4 > self.hauteur) or (j+4> self.largeur):
             ligne = False
-        elif:
+        else:
             #test 4 jetons alignés
             ligne = True
             for a in range(0,4):
@@ -102,7 +102,7 @@ class Grille:
         j = x
         
         #recherche début de ligne
-        while(self.grille[i][j] == joueur) && (i >=0) && (j >=0):
+        while(self.grille[i][j] == joueur) and (i >=0) and (j >=0):
             i+=1
             j-=1
 
@@ -111,9 +111,9 @@ class Grille:
 
         #test distance à la fin de la grille
         ligne = False
-        if (i-4 < 0) || (j+4> self.largeur):
+        if (i-4 < 0) or (j+4> self.largeur):
             ligne = False
-        elif:
+        else:
             #test 4 jetons alignés
             ligne = True
             for a in range(0,4):
